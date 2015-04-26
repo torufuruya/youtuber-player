@@ -1,10 +1,10 @@
 PODS:
-  - youtube-ios-player-helper (0.1.1)
+  - HCYoutubeParser (0.0.2)
 
 DEPENDENCIES:
-  - youtube-ios-player-helper (~> 0.1.1)
+  - HCYoutubeParser (~> 0.0.2)
 
 SPEC CHECKSUMS:
-  youtube-ios-player-helper: d7350b9f9070edf482e5d0bd5e8948c0ba1437f3
+  HCYoutubeParser: cdfef410cd2ce6ee538a07ee4a1c9ed29069f544
 
 COCOAPODS: 0.36.3

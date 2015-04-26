@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		188A22EE1AED517C009492F2 /* PlayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 188A22EC1AED517C009492F2 /* PlayerTableViewCell.m */; };
+		188A22EF1AED517C009492F2 /* PlayerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 188A22ED1AED517C009492F2 /* PlayerTableViewCell.xib */; };
+		188A22F11AED62FF009492F2 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 188A22F01AED62FF009492F2 /* test.jpg */; };
 		188FB0511AECF5DA0040EE3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188FB0501AECF5DA0040EE3E /* main.m */; };
 		188FB0541AECF5DA0040EE3E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188FB0531AECF5DA0040EE3E /* AppDelegate.m */; };
 		188FB0571AECF5DA0040EE3E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188FB0561AECF5DA0040EE3E /* ViewController.m */; };
@@ -29,6 +32,10 @@
 
 /* Begin PBXFileReference section */
 		029E27E7ED9F6766EA0B71E2 /* libPods-youtuber-player.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-youtuber-player.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		188A22EB1AED517C009492F2 /* PlayerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerTableViewCell.h; sourceTree = "<group>"; };
+		188A22EC1AED517C009492F2 /* PlayerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerTableViewCell.m; sourceTree = "<group>"; };
+		188A22ED1AED517C009492F2 /* PlayerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerTableViewCell.xib; sourceTree = "<group>"; };
+		188A22F01AED62FF009492F2 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test.jpg; path = ../../../Desktop/test.jpg; sourceTree = "<group>"; };
 		188FB04B1AECF5DA0040EE3E /* youtuber-player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "youtuber-player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		188FB04F1AECF5DA0040EE3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		188FB0501AECF5DA0040EE3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -92,8 +99,12 @@
 				188FB0531AECF5DA0040EE3E /* AppDelegate.m */,
 				188FB0551AECF5DA0040EE3E /* ViewController.h */,
 				188FB0561AECF5DA0040EE3E /* ViewController.m */,
+				188A22EB1AED517C009492F2 /* PlayerTableViewCell.h */,
+				188A22EC1AED517C009492F2 /* PlayerTableViewCell.m */,
+				188A22ED1AED517C009492F2 /* PlayerTableViewCell.xib */,
 				188FB0581AECF5DA0040EE3E /* Main.storyboard */,
 				188FB05B1AECF5DA0040EE3E /* Images.xcassets */,
+				188A22F01AED62FF009492F2 /* test.jpg */,
 				188FB05D1AECF5DA0040EE3E /* LaunchScreen.xib */,
 				188FB04E1AECF5DA0040EE3E /* Supporting Files */,
 			);
@@ -225,6 +236,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188A22EF1AED517C009492F2 /* PlayerTableViewCell.xib in Resources */,
+				188A22F11AED62FF009492F2 /* test.jpg in Resources */,
 				188FB05A1AECF5DA0040EE3E /* Main.storyboard in Resources */,
 				188FB05F1AECF5DA0040EE3E /* LaunchScreen.xib in Resources */,
 				188FB05C1AECF5DA0040EE3E /* Images.xcassets in Resources */,
@@ -278,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188A22EE1AED517C009492F2 /* PlayerTableViewCell.m in Sources */,
 				188FB0571AECF5DA0040EE3E /* ViewController.m in Sources */,
 				188FB0541AECF5DA0040EE3E /* AppDelegate.m in Sources */,
 				188FB0511AECF5DA0040EE3E /* main.m in Sources */,
@@ -408,6 +422,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "youtuber-player/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -419,6 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "youtuber-player/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

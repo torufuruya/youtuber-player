@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,30 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUm-55-bW3" customClass="YTPlayerView">
-                                <rect key="frame" x="0.0" y="131" width="600" height="338"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="FUm-55-bW3" secondAttribute="height" multiplier="16:9" id="D3m-BW-DbH"/>
-                                </constraints>
-                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="THe-Cg-t88">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="FUm-55-bW3" secondAttribute="trailing" id="2eW-TP-FFu"/>
-                            <constraint firstAttribute="centerY" secondItem="FUm-55-bW3" secondAttribute="centerY" id="D0Y-08-BMk"/>
-                            <constraint firstItem="FUm-55-bW3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="S0m-1r-6Nl"/>
-                            <constraint firstItem="FUm-55-bW3" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="dM1-5z-VYG"/>
-                            <constraint firstAttribute="centerX" secondItem="FUm-55-bW3" secondAttribute="centerX" id="zFe-Fj-ZDf"/>
+                            <constraint firstAttribute="trailing" secondItem="THe-Cg-t88" secondAttribute="trailing" id="SE6-qK-58e"/>
+                            <constraint firstItem="THe-Cg-t88" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="n82-a7-nEi"/>
+                            <constraint firstItem="THe-Cg-t88" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ojs-n6-d5R"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="THe-Cg-t88" secondAttribute="bottom" id="zyP-fC-KUv"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="dM1-5z-VYG"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="playerView" destination="FUm-55-bW3" id="ljq-CE-KKP"/>
+                        <outlet property="tableView" destination="THe-Cg-t88" id="FhB-El-ck8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
