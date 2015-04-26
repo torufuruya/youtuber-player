@@ -13,6 +13,7 @@
 
 @property NSString *cellId;
 @property NSArray *data;
+@property (strong, nonatomic) MPMoviePlayerController *movie;
 
 @end
 
@@ -28,6 +29,11 @@
     [self.tableView registerNib:[UINib nibWithNibName:self.cellId bundle:nil] forCellReuseIdentifier:self.cellId];
 
     self.data = @[@"ZUwc468b6PE", @"6EoGVdgTJ5Y", @"I6HmlvQx64A", @"ZV2PMHhL3TM", @"8TRNkZT-WM8"];
+
+    NSString *urlString = [NSString stringWithFormat:@"https://www.youtube.com/watch?v=%@", self.data[0]];
+    NSDictionary *videos = [HCYoutubeParser h264videosWithYoutubeURL:[NSURL URLWithString:urlString]];
+    self.movie = [[MPMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:videos[@"medium"]]];
+    [self.movie setControlStyle:MPMovieControlStyleNone];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -40,6 +46,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PlayerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellId forIndexPath:indexPath];
+    if (indexPath.row == 0) {
+        self.movie.view.frame = cell.frame;
+        [cell addSubview:self.movie.view];
+        [self.movie prepareToPlay];
+        return cell;
+    }
     [HCYoutubeParser thumbnailForYoutubeID:self.data[indexPath.row]
                              thumbnailSize:YouTubeThumbnailDefaultHighQuality
                              completeBlock:^(UIImage *image, NSError *error)
@@ -70,6 +82,23 @@
         MPMoviePlayerViewController *controller = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:videos[@"medium"]]];
         [self presentMoviePlayerViewControllerAnimated:controller];
     }];
+}
+
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        [self.movie pause];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        [self.movie play];
+    }
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
