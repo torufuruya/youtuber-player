@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <youtube-ios-player-helper/YTPlayerView.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<YTPlayerViewDelegate>
 
+@property (weak, nonatomic) IBOutlet YTPlayerView *playerView;
 
 @end
 

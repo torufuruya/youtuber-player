@@ -17,6 +17,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSDictionary *playerVars = @{
+        @"playsinline": @1,
+        @"autohide"   : @1,
+        @"rel"        : @0,
+        @"showinfo"   : @0,
+    };
+    [self.playerView loadWithVideoId:@"pNJb8WUQaGM" playerVars:playerVars];
+    self.playerView.delegate = self;
+}
+
+- (void)playerViewDidBecomeReady:(YTPlayerView *)playerView {
+    [playerView playVideo];
 }
 
 - (void)didReceiveMemoryWarning {
